@@ -45,6 +45,10 @@ for dataset in data_cleaner:
     dataset['Embarked'].fillna(dataset['Embarked'].mode()[0], inplace = True)
     dataset['Fare'].fillna(dataset['Fare'].median(), inplace = True)
 
+
+
+
+
 drop_column = ['PassengerId','Cabin','Ticket']
 data1.drop(drop_column,axis = 1,inplace  = True)
 for dataset in data_cleaner:
