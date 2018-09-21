@@ -147,6 +147,13 @@ xietong_result.to_csv('3_1_4xietong_result.csv')
 
 
 
+
+
+
+
+
+
+
 # 随机推荐
 randata = 1 - df_test # df_test是用户浏览过的网页的矩阵形式，randata则表示是用户未浏览过的网页的矩阵形式
 
@@ -157,8 +164,6 @@ def rand_recommd(K, recomMatrix):#　
     import random # 注意：这个random是random模块，
 
     import numpy as np
-
-    
 
     recomMatrix.fillna(0.0,inplace=True) # 此处必须先填充空值
 
@@ -202,17 +207,7 @@ random_result = rand_recommd(3, randmatrix) # 调用随机推荐函数
 
 end4 = time.clock()
 
-print '随机为用户推荐3个未浏览过的网址耗时为' + str(end4 - start4)+'s!' # 2.1900423292s!
 
- 
-
-#保存的表名命名格式为“3_1_k此表功能名称”，是本小节生成的第5张表格，功能为random_result：显示随机推荐的结果
-
-random_result.to_csv('random_result.csv')
-
- 
-
-random_result # 结果中出现了全空的行，这是冷启动现象
 
 
 def popular_recommed(K, recomMatrix):
